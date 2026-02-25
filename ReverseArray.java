@@ -1,0 +1,42 @@
+package com.sarvesh.javabasics;
+
+import java.util.Scanner;
+
+public class ReverseArray {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Enter number of Integers: ");
+		int n = sc.nextInt();
+		
+		int[] arr = new int[n];
+		System.out.print("Enter Numers in Array: ");
+		for(int i = 0;i<n;i++) {
+			arr[i] = sc.nextInt();
+		}
+		
+		reverseArray(arr);
+		
+		System.out.print("Reversed Array: ");
+		for(int i=0;i<arr.length;i++) {
+			System.out.print(" "+arr[i] );
+		}
+		sc.close();
+	}
+	
+	public static void reverseArray(int[] arr) {
+		int left = 0;
+		int right = arr.length - 1;
+		
+		while(left < right) {
+			int temp = arr[left];
+			arr[left] = arr[right];
+			arr[right] = temp;
+			left++;
+			right--;
+		}
+		
+	}
+
+}
